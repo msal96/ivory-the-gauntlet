@@ -1,0 +1,19 @@
+{
+  "name": "ivory-the-gauntlet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msal96/ivory-the-gauntlet.git"
+  },
+  "author": "Salari Mihail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msal96/ivory-the-gauntlet/issues"
+  },
+  "homepage": "https://github.com/msal96/ivory-the-gauntlet#readme"
+}
