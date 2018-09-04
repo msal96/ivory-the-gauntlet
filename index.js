@@ -64,6 +64,32 @@ class LinkedList {
     }
     return indexes
   }
+  bubbleSort (tail) {
+    const current = tail
+    let arr = []
+    var swapped = true
+    var sortedElem = 0
+    var aux = 0
+    while (current) {
+      arr.push(current)
+      current = current.next
+    }
+      while (swapped) {
+        swapped = false
+        sortedElem++
+        for (let i = 0; i < arr.length - sortedElem; i++)
+          {
+            if(arr[i].value > arr[i+1].value)
+              {
+                aux = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = aux
+                swapped = true
+              }
+          }
+      }
+    return arr
+  }
 }
 
 module.exports = LinkedList

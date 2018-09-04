@@ -101,4 +101,13 @@ describe('Linked List', () => {
     assert.deepEqual(list.indexOf(3), [1, 2])
     assert.deepEqual(list.indexOf(4), [])
   })
+  it('Should sort a array of nodes', () => {
+    const list = new LinkedList()
+    list.addToHead(2)
+    list.addToHead(1)
+    list.addToHead(4)
+    list.addToHead(3)
+    console.log('sorted list:', list.bubbleSort(list.tail))
+    assert.deepEqual(list.bubbleSort(list.tail), [0, 4])
+  })
 })
