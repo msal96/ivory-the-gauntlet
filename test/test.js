@@ -113,7 +113,7 @@ describe('Linked List', () => {
     assert.deepEqual(list.printList(), [2, 1, 4, 3])
     assert.deepEqual(empty.printList(), null)
   })
-  it('Should add at index a value', () => {
+  xit('Should add at index a value', () => {
     const list = new LinkedList()
     list.addToHead(2)
     list.addToHead(1)
