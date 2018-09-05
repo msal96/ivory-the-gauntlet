@@ -64,21 +64,39 @@ class LinkedList {
     }
     return indexes
   }
-  addAtIndex (index, value) {
-    let actualIndex = 0
-    let current = this.tail
-    console.log('1')
-    while (actualIndex != index) {
-      current = current.next
-      actualIndex ++
+
+  removeAtIndex (index) {
+    let currentNode = this.tail
+    let currentIndex = 0
+
+    while (currentIndex !== index) {
+      currentIndex++
+      currentNode = currentNode.next
     }
-    console.log('2', actualIndex, index)
-    if(actualIndex === index) {
-      const node = new Node(value, this.current, this.current.prev)
-      console.log('current after found:', this.current)
-      this.current.prev.next = node
+
+    if (currentIndex === index) {
+      currentNode.prev.next = currentNode.next
+      currentNode.next.prev = currentNode.prev
+      currentNode.prev = null
+      currentNode.next = null
     } else {
       return null
+    }
+  }
+
+  addAtIndex (index, value) {
+    let currentNode = this.tail
+    let currentIndex = 0
+
+    while (currentIndex !== index) {
+      currentIndex++
+      currentNode = currentNode.next
+    }
+
+    let newNode = new Node(value, currentNode, currentNode.prev)
+    if (currentIndex === index) {
+      currentNode.prev.next = newNode
+      currentNode.prev = newNode
     }
   }
   printList () {
