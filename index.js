@@ -1,8 +1,3 @@
-let swap = (x, y) => {
-  var aux = x
-  x = y
-  y = aux
-}
 class Node {
   constructor(value, next, prev) {
     this.value = value
@@ -36,14 +31,14 @@ class LinkedList {
   bubbleSort() {
     let current = this.tail
     let arrValues = []
-    let swapped = true
-    let j = 0
     while (current) {
       arrValues.push(current.value)
       current = current.next
     }
-    let n = arrValues.length
     console.log('arrrr:', arrValues)
+    let swapped = true
+    let j = 0
+    let n = arrValues.length
     while (swapped) {
       swapped = false
       j++
