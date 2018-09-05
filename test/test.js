@@ -101,6 +101,18 @@ describe('Linked List', () => {
     assert.deepEqual(list.indexOf(3), [1, 2])
     assert.deepEqual(list.indexOf(4), [])
   })
+  it('Should print a list as an array', () => {
+    const list = new LinkedList()
+    const empty = new LinkedList()
+    list.addToHead(2)
+    list.addToHead(1)
+    list.addToHead(4)
+    list.addToHead(3)
+    console.log('priiint:', list.tail)
+    console.log('sorted list:', list.printList())
+    assert.deepEqual(list.printList(), [2, 1, 4, 3])
+    assert.deepEqual(empty.printList(), null)
+  })
   it('Should sort a array of nodes', () => {
     const list = new LinkedList()
     list.addToHead(2)

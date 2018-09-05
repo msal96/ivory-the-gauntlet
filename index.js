@@ -64,6 +64,41 @@ class LinkedList {
     }
     return indexes
   }
+  printList () {
+    console.log('taillll:', this.tail)
+    let current = this.tail
+    let result = []
+    while (current) {
+      result.push(current.value)
+      current = current.next
+    }
+    return result.length > 0 ? result : null
+  }
+//   bubbleSort () {
+//     const current = this.tail
+//     let arr = []
+//     var swapped = true
+//     var sortedElem = 0
+//     var aux = 0
+//     while (current) {
+//       arr.push(current)
+//       current = current.next
+//     }
+//    let swap = (x, y) => {
+//     var aux = x; 
+//     x = y;
+//     y = aux;
+// }
+ 
+// // A function to implement bubble sort
+// void bubbleSort(int arr[], int n)
+// {
+//    int i, j;
+//    for (i = 0; i < n-1; i++)       
+//        for (j = 0; j < n-i-1; j++) 
+//            if (arr[j] > arr[j+1])
+//               swap(&arr[j], &arr[j+1]);
+// }
   bubbleSort (tail) {
     const current = tail
     let arr = []
