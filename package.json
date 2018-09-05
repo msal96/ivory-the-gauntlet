@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/msal96/ivory-the-gauntlet/issues"
   },
-  "homepage": "https://github.com/msal96/ivory-the-gauntlet#readme"
+  "homepage": "https://github.com/msal96/ivory-the-gauntlet#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
 }

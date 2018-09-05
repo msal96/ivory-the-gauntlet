@@ -1,0 +1,20 @@
+var assert = require('assert')
+var LinkedList = require('../index') 
+describe('Linked list', function() {
+    it('should print array', function() {
+        const list = new LinkedList()
+        list.addToHead(2)
+        list.addToHead(3)
+        assert.deepEqual(list.printList(), [2, 3])
+    })
+    it('should sort correctly', function(){
+        const list = new LinkedList()
+        list.addToHead(3)
+        list.addToHead(2)
+        list.addToHead(1)
+        assert.deepEqual(list.bubbleSort(), [1, 2, 3])
+        list.addToHead(8)
+        list.addToHead(6)
+        assert.deepEqual(list.bubbleSort(), [1, 2, 3, 6, 8])
+    })
+})
