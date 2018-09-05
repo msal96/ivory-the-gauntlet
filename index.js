@@ -64,6 +64,23 @@ class LinkedList {
     }
     return indexes
   }
+  addAtIndex (index, value) {
+    let actualIndex = 0
+    let current = this.tail
+    console.log('1')
+    while (actualIndex != index) {
+      current = current.next
+      actualIndex ++
+    }
+    console.log('2', actualIndex, index)
+    if(actualIndex === index) {
+      const node = new Node(value, this.current, this.current.prev)
+      console.log('current after found:', this.current)
+      this.current.prev.next = node
+    } else {
+      return null
+    }
+  }
   printList () {
     console.log('taillll:', this.tail)
     let current = this.tail
@@ -73,57 +90,6 @@ class LinkedList {
       current = current.next
     }
     return result.length > 0 ? result : null
-  }
-//   bubbleSort () {
-//     const current = this.tail
-//     let arr = []
-//     var swapped = true
-//     var sortedElem = 0
-//     var aux = 0
-//     while (current) {
-//       arr.push(current)
-//       current = current.next
-//     }
-//    let swap = (x, y) => {
-//     var aux = x; 
-//     x = y;
-//     y = aux;
-// }
- 
-// // A function to implement bubble sort
-// void bubbleSort(int arr[], int n)
-// {
-//    int i, j;
-//    for (i = 0; i < n-1; i++)       
-//        for (j = 0; j < n-i-1; j++) 
-//            if (arr[j] > arr[j+1])
-//               swap(&arr[j], &arr[j+1]);
-// }
-  bubbleSort (tail) {
-    const current = tail
-    let arr = []
-    var swapped = true
-    var sortedElem = 0
-    var aux = 0
-    while (current) {
-      arr.push(current)
-      current = current.next
-    }
-      while (swapped) {
-        swapped = false
-        sortedElem++
-        for (let i = 0; i < arr.length - sortedElem; i++)
-          {
-            if(arr[i].value > arr[i+1].value)
-              {
-                aux = arr[i]
-                arr[i] = arr[i+1]
-                arr[i+1] = aux
-                swapped = true
-              }
-          }
-      }
-    return arr
   }
 }
 

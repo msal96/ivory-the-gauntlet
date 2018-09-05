@@ -113,13 +113,13 @@ describe('Linked List', () => {
     assert.deepEqual(list.printList(), [2, 1, 4, 3])
     assert.deepEqual(empty.printList(), null)
   })
-  it('Should sort a array of nodes', () => {
+  it('Should add at index a value', () => {
     const list = new LinkedList()
     list.addToHead(2)
     list.addToHead(1)
     list.addToHead(4)
     list.addToHead(3)
-    console.log('sorted list:', list.bubbleSort(list.tail))
-    assert.deepEqual(list.bubbleSort(list.tail), [0, 4])
+    list.addAtIndex(1, 10)
+    assert.equal(list.tail.next.value, 10)
   })
 })
