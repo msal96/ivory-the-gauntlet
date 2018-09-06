@@ -1,3 +1,15 @@
+const customer = {
+  name: 'Mickael',
+  rentals: [
+    {movieID: '12', days: 2},
+  ]
+}
+const movies = {
+  '12': {
+    title:'The lord of the rings',
+    code: 'new'
+  }
+}
 function statement(customer, movies) {
   let totalAmount = 0
   let frequentRenterPoints = 0 
@@ -44,4 +56,5 @@ function statement(customer, movies) {
   result += `You earned ${frequentRenterPoints} frequent renter points\n`
   return result
 }
+console.log(statement(customer, movies))
 module.exports = statement
