@@ -2,7 +2,7 @@
   "name": "ivory-the-gauntlet",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "nbc.js",
   "scripts": {
     "test": "npm test"
   },
