@@ -1,7 +1,16 @@
-import { CREATE_USER, AUTH_USER } from '../Constants/Constants'
+import { CREATE_USER, AUTH_USER, SET_IS_LOGGED_IN_TO_TRUE } from '../Constants/Constants'
 export const createUser = signUpData => ({
     type: CREATE_USER,
     payload: {
         signUpData
     }
+})
+export const authUser = authData => ({
+    type: AUTH_USER,
+    payload: {
+        authData
+    }
+})
+export const setIsLoggedInToTrue = () => ({
+    type: SET_IS_LOGGED_IN_TO_TRUE
 })

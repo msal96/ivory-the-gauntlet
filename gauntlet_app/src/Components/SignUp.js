@@ -30,6 +30,7 @@ class SignUp extends Component {
         this.props.createUser(this.state.form)
     }
     render () {
+        console.log('sign:', this.props.isLoggedIn)
         const { firstName, lastName, username, password } = this.state.form
         return (<div>
                 <form onSubmit = {this.onSubmit}>
@@ -43,8 +44,13 @@ class SignUp extends Component {
         )
     }
 }
-
+const mapStateToProps = state => {
+    console.log('state:', state)
+    return{
+    isLoggedIn: state.isLoggedIn
+    }
+}
 const mapDispatchToProps = {
     createUser
 }
-export default connect(null, mapDispatchToProps)(SignUp)
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
