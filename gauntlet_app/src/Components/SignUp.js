@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Auth } from 'aws-amplify'
 import { createUser } from '../Actions/Actions' 
 import FormField from './FormField'
 class SignUp extends Component {
@@ -24,10 +25,25 @@ class SignUp extends Component {
 			form: newFormState
         })
     }
+    // onSubmit = async event => {
+    //     event.preventDefault()
+    //     try {
+    //       await Auth.signUp({
+    //         firstName: this.state.firstName,
+    //         lastName: this.state.lastName,
+    //         username: this.state.username,
+    //         password: this.state.password
+    //       }).then(data => console.log('data:', data))
+    //         .catch(err => console.log(err));
+    //     } catch (error) {
+    //       console.log(error)
+    //     }
+    // }
     onSubmit = (e) => {
         e.preventDefault()
         console.log('Submit:', this.state.form)
         this.props.createUser(this.state.form)
+        console.log('Succesfully registered')
     }
     render () {
         console.log('sign:', this.props.isLoggedIn)

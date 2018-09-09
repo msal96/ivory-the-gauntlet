@@ -1,12 +1,14 @@
 import {
   CREATE_USER,
   AUTH_USER,
-  SET_IS_LOGGED_IN_TO_TRUE
+  SET_IS_LOGGED_IN_TO_TRUE,
+  LOGOUT
 } from '../Constants/Constants'
 let initialState = {
   signUpData: {},
   authData: {},
-  isLoggedIn: false
+  isLoggedIn: false,
+  notes: []
 }
 const Reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -29,6 +31,11 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: true
+      }
+    case LOGOUT:
+      return {
+        ...state,
+        isLoggedIn: false
       }
     default:
       return state

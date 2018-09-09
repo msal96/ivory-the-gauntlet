@@ -36,7 +36,7 @@ class Auth extends Component {
   render () {
     const { username, password } = this.state.authData
     return (
-      <div>
+      <div className='Auth'>
         <form onSubmit={this.onSubmit}>
           <div>
           <label>Username</label>

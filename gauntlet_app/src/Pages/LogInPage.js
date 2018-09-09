@@ -6,7 +6,7 @@ export default class LogInPage extends Component {
     return (
       <div>
         <Auth />
-        <NavLink to="/register">Create new account</NavLink>
+        <NavLink className='nav' to="/register">Create new account</NavLink>
       </div>
     )
   }
